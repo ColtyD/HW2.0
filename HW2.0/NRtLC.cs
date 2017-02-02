@@ -14,9 +14,16 @@ namespace HW2._0
 
         public void Compute(int min = 0, int max = 0)
         {
-            int size = (max - min) + 1;
+            int size; 
 
-            int[] array = new int[max + 1];
+            if ((min < 0 && max < 0) && min < max)
+            {
+                size = (Math.Abs(min) - Math.Abs(max));
+            }
+            else { size = (max - min) + 1; }
+                
+
+            //int[] array = new int[max + 1];
             // IList<int> List = new List<int>(max + 1);
             Stack<int> NumStack = new Stack<int>(size);
 
